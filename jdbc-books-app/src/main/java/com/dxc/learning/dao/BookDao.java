@@ -1,4 +1,5 @@
 package com.dxc.learning.dao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,11 +16,9 @@ public class BookDao {
 
     private static final String SELECT_ALL_BOOKS;
 
-
     private static final String USER_NAME;
     private static final String PASSWORD;
     private static final String URL;
-
 
     static {
         INSERT_ONE_BOOK = "INSERT INTO books (title, author, isbn) VALUES (?, ?, ?)";
@@ -32,11 +31,7 @@ public class BookDao {
         URL = "jdbc:mysql://localhost:3306/dxc";
     }
 
-    public BookDao() {
-
-    }
-
-    public List<Book> findAll() throws SQLException{
+    public List<Book> findAll() throws SQLException {
         List<Book> books = null;
         Connection connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
         Statement statement = connection.createStatement();
@@ -54,12 +49,6 @@ public class BookDao {
     public int save(Book book) throws SQLException {
         System.out.println("Saving book: " + book);
 
-        // Load the JDBC Driver
-        // Automatically done for version 8 and above
-        // DriverManager.registerDriver(Driver.class);
-        // Class.forName("com.mysql.cj.jdbc.Driver");
-
-        // Get a connection to the database
         Connection connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
 
         PreparedStatement ps = connection.prepareStatement(INSERT_ONE_BOOK);
