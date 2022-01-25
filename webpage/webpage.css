@@ -1,0 +1,15 @@
+header {
+  font-size: 1em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+  color: rgb(255, 255, 255);
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 400;
+
+}
+a:hover{
+  text-decoration:none;
+  text-align: center;
+}
